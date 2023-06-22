@@ -14,22 +14,22 @@ module.exports = {
       {
         source: '/About',
         destination: '/about',
-        permanent: true,
+        permanent: false,
       },
       {
         source: '/Contact',
         destination: '/contact',
-        permanent: true,
+        permanent: false,
       },
       {
         source: '/Live',
         destination: '/live',
-        permanent: true,
+        permanent: false,
       },
       {
         source: '/Login',
         destination: '/login',
-        permanent: true,
+        permanent: false,
       },
     ]
   },
