@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
 import "styles/style.scss";
-import caseInsensitiveMiddleware from "caseInsensitiveMiddleware";
+// import caseInsensitiveMiddleware from "caseInsensitiveMiddleware";
 
 
 const App = ({ Component, pageProps }) => {
@@ -14,6 +14,12 @@ const App = ({ Component, pageProps }) => {
   const pf = theme.fonts.font_family.primary;
   const sf = theme.fonts.font_family.secondary;
   const [fontcss, setFontcss] = useState();
+  useEffect(() => {
+    const lowercasePathname = window.location.pathname.toLowerCase();
+    if (window.location.pathname !== lowercasePathname) {
+      window.location.pathname = lowercasePathname;
+    }
+  }, []);
   useEffect(() => {
     fetch(
       `https://fonts.googleapis.com/css2?family=${pf}${
@@ -62,17 +68,17 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-App.getInitialProps = async ({ Component, ctx }) => {
-  if (ctx.req) {
-    caseInsensitiveMiddleware(ctx.req, ctx.res, () => {});
-  }
+// App.getInitialProps = async ({ Component, ctx }) => {
+//   if (ctx.req) {
+//     caseInsensitiveMiddleware(ctx.req, ctx.res, () => {});
+//   }
 
-  let pageProps = {};
-  if (Component.getInitialProps) {
-    pageProps = await Component.getInitialProps(ctx);
-  }
+//   let pageProps = {};
+//   if (Component.getInitialProps) {
+//     pageProps = await Component.getInitialProps(ctx);
+//   }
 
-  return { pageProps };
-};
+//   return { pageProps };
+// };
 
 export default App;
