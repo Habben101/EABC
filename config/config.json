@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "EABC - East African Broadcasting Corporate",
+    "base_url": "/",
+    "favicon": "/images/logo.png",
+    "logo": "/images/logo.png",
+    "logo_width": "101",
+    "logo_height": "95",
+    "logo_text": "EABC"
+  },
+
+  "settings": {
+    "pagination": 4,
+    "summary_length": 200,
+    "blog_folder": "blogs"
+  },
+
+  "nav_button": {
+    "enable": true,
+    "label": "Login",
+    "link": "/contact"
+  },
+  "nav_button_live": {
+    "enabled":true,
+    "labeled": "Live",
+    "linked": "/live",
+    "liveIcon": "/images/playButton.png"
+  },
+
+  "params": {
+    "contact_form_action": "",
+    "tag_manager_id": "",
+    "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
+    "copyright": "Designed and Developed By [Themefisher](https://themefisher.com/)"
+  },
+
+  "metadata": {
+    "meta_author": "Themefisher",
+    "meta_image": "",
+    "meta_description": "A SAAS template for nextjs"
+  }
+}

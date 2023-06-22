@@ -1,0 +1,79 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About us",
+      "url": "/about"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
+  "footer": [
+    {
+      "name": "PAGES",
+      "menu": [
+        {
+          "text": "EABC TV",
+          "url": "/live"
+        },
+        {
+          "text": "About",
+          "url": "/about"
+        },
+        {
+          "text": "Contact",
+          "url": "/contact"
+        },
+        {
+          "text": "Support",
+          "url": "/support"
+        }
+      ]
+    },
+    {
+      "name": "USEFUL LINKS",
+      "menu": [
+        {
+          "text": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "text": "Terms & Conditions",
+          "url": "/terms-condition"
+        },
+        {
+          "text": "Client Area",
+          "url": "/client"
+        }
+      ]
+    },
+    {
+      "name": "Information",
+      "menu": [
+        {
+          "text": "Address Placeholder",
+          "iconSvg": "/images/location.svg",
+          "icon": true,
+          "url": "#"
+        },
+        {
+          "text": "info@eabc.us",
+          "iconSvg": "/images/email.svg",
+          "icon": true,
+          "url": "#"
+        },
+        {
+          "text": "+1 000-00-0000",
+          "iconSvg": "/images/phone.svg",
+          "icon":true,
+          "url": "#"
+        }
+      ]
+    }
+  ]
+}
