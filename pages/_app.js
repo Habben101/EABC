@@ -14,12 +14,6 @@ const App = ({ Component, pageProps }) => {
   const pf = theme.fonts.font_family.primary;
   const sf = theme.fonts.font_family.secondary;
   const [fontcss, setFontcss] = useState();
-  // useEffect(() => {
-  //   const lowercasePathname = window.location.pathname.toLowerCase();
-  //   if (window.location.pathname !== lowercasePathname) {
-  //     window.location.pathname = lowercasePathname;
-  //   }
-  // }, []);
   useEffect(() => {
     fetch(
       `https://fonts.googleapis.com/css2?family=${pf}${
@@ -67,18 +61,5 @@ const App = ({ Component, pageProps }) => {
     </>
   );
 };
-
-// App.getInitialProps = async ({ Component, ctx }) => {
-//   if (ctx.req) {
-//     caseInsensitiveMiddleware(ctx.req, ctx.res, () => {});
-//   }
-
-//   let pageProps = {};
-//   if (Component.getInitialProps) {
-//     pageProps = await Component.getInitialProps(ctx);
-//   }
-
-//   return { pageProps };
-// };
 
 export default App;
