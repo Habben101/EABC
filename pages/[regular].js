@@ -26,10 +26,10 @@ const RegularPages = ({ data }) => {
         <NotFound data={data} />
       ) : layout === "contact" ? (
         <Contact data={data} />
-      ) : layout === "pricing" ? (
-        <Pricing data={data} />
-      ) : layout === "faq" ? (
-        <Faq data={data} />
+      ) : layout === "Contact" ? (
+        <Contact data={data} />
+      ) : layout === "About" ? (
+        <About data={data} />
       ) : layout === "about" ? (
         <About data={data} />
       ) : (
