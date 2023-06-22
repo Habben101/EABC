@@ -18,7 +18,7 @@ app.prepare().then(() => {
       return;
     }
 
-    handle(req, res, parsedUrl);
+    app.render(req, res, pathname, parsedUrl.query);
   }).listen(3000, (err) => {
     if (err) throw err;
     console.log('> Ready on http://localhost:3000');
