@@ -52,7 +52,7 @@ const Contact = ({ data }) => {
               <div className="circle-2"></div>
               <div className="circle-3"></div>
             </div>
-            <div className="form-card p-16 ">
+            <div className="form-card p-8 md:p-16 ">
               <div className="form-body">
                 <div className="form-block w-form">
                   <form
