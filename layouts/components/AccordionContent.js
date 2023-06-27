@@ -29,7 +29,7 @@ const Content = ({ faqs }) => {
                     <WidthWhenVisible delay={0.6} Svgwidth="91" />
                 </div>
                 <FadeInWhenVisibleY delay={0.4}>
-                    <h3 className="w-[70%]">A few big reasons make you choose EABC</h3>
+                    <h3 className="w-[70%] mb-12 md:mb-0">A few big reasons make you choose EABC</h3>
                 </FadeInWhenVisibleY>
                 <div>
                     <div className='flex flex-col gap-4 relative top-[-1.5rem] mb-[2.5rem] md:top-[2rem] md:mb-0'>

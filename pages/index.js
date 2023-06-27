@@ -15,103 +15,8 @@ import { useState } from "react";
 import Content from "./../layouts/components/AccordionContent";
 import { BiChevronRight } from "react-icons/bi";
 import { motion } from 'framer-motion';
-import FadeInWhenVisible, { FadeInWhenVisibleX, FadeInWhenVisibleY, WidthWhenVisible } from "./../layouts/components/Animations/animations";
+import FadeInWhenVisible,{ FadeInWhenVisibleX, FadeInWhenVisibleY, WidthWhenVisible } from "./../layouts/components/Animations/animations";
 
-
-// function FadeInWhenVisible({ children, delay }) {
-//   return (
-//     <motion.div
-//       initial={"hidden"}
-//       whileInView="visible"
-//       viewport={{ once: true }}
-//       transition={{ duration: 0.9, delay: delay }}
-//       variants={{
-//         visible: { opacity: 1 },
-//         hidden: { opacity: 0 }
-//       }}
-//     >
-//       {children}
-//     </motion.div>
-//   );
-// }
-
-// function FadeInWhenVisibleX({ children, delay }) {
-//   return (
-//     <motion.div
-//       initial={"hidden"}
-//       whileInView="visible"
-//       viewport={{ once: true }}
-//       transition={{ duration: 0.9, delay: delay }}
-//       variants={{
-//         visible: { opacity: 1, x: 0 },
-//         hidden: { opacity: 0, x: 100 }
-//       }}
-//     >
-//       {children}
-//     </motion.div>
-//   );
-// }
-
-// function FadeInWhenVisibleY({ children, delay }) {
-//   return (
-//     <motion.div
-//       initial={"hidden"}
-//       whileInView="visible"
-//       viewport={{ once: true }}
-//       transition={{ duration: 0.9, delay: delay }}
-//       variants={{
-//         visible: { opacity: 1, y: 0 },
-//         hidden: { opacity: 0, y: 100 }
-//       }}
-//     >
-//       {children}
-//     </motion.div>
-//   );
-// }
-
-// function WidthWhenVisible({ children, delay }) {
-//   return (
-//     <motion.svg
-//       initial={"hidden"}
-//       whileInView="visible"
-//       viewport={{ once: true }}
-//       transition={{ duration: 0.9, delay: delay }}
-//       variants={{
-//         visible: { width: 100 },
-//         hidden: { width: 0 }
-//       }}
-//       width="91"
-//       height="11"
-//       viewBox="0 0 91 11"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <rect
-//         width="88"
-//         height="5"
-//         transform="translate(1.66998 3.85999)"
-//         fill="#DF0303"
-//       />
-//       <rect
-//         x="0.669983"
-//         y="0.859985"
-//         width="10"
-//         height="10"
-//         rx="5"
-//         fill="#DF0303"
-//       />
-//       <rect
-//         x="80.67"
-//         y="0.859985"
-//         width="10"
-//         height="10"
-//         rx="5"
-//         fill="#DF0303"
-//       />
-
-//     </motion.svg>
-//   );
-// }
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, faqs, applinks, channelsList, downloadLinks, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
@@ -129,7 +34,7 @@ const Home = ({ frontmatter }) => {
         return (
           <section
             key={`service-${index}`}
-            className={`section ${isOdd && 'bg-theme-light'} overflow-hidden `}
+            className={`section ${isOdd && 'bg-theme-light'}`}
           >
             <div className="container">
               <div className="items-center gap-8 md:grid md:grid-cols-2">
@@ -207,8 +112,8 @@ const Home = ({ frontmatter }) => {
       <section className="section bgWithImg">
         <div className="absolute z-0 w-full h-full">
           <FadeInWhenVisible delay={0.4}>
-            <Image src="/images/pattern-layer.png" width={82} height={149} alt="pattern layer" className="absolute right-0" />
-            <Image src="/images/pattern-layer.png" width={82} height={149} alt="pattern layer" className="absolute rotate-180 left-0 bottom-0" />
+          <Image src="/images/pattern-layer.png" width={82} height={149} alt="pattern layer" className="absolute right-0" />
+          <Image src="/images/pattern-layer.png" width={82} height={149} alt="pattern layer" className="absolute rotate-180 left-0 bottom-0" />
           </FadeInWhenVisible>
         </div>
         <div className="container">
@@ -221,25 +126,25 @@ const Home = ({ frontmatter }) => {
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 relative z-10">
             {feature.features.map((item, i) => (
               <FadeInWhenVisibleY delay={0.4} key={`feature-${i}`}>
-                <motion.div
-                  className="feature-card rounded-xl bg-transparent border-[#DF0303] border p-5 pb-8 text-center flex flex-col justify-center cursor-pointer"
-                  whileHover={{ scale: 1.1, backgroundColor: "#010c3aa3" }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  {item.icon && (
-                    <Image
-                      className="mx-auto"
-                      src={item.icon}
-                      width={30}
-                      height={30}
-                      alt=""
-                    />
-                  )}
-                  <div className="mt-4">
-                    {markdownify(item.name, "h2", "h5 Crimson")}
-                    <p className="mt-3 text-white">{item.content}</p>
-                  </div>
-                </motion.div>
+              <motion.div
+                className="feature-card rounded-xl bg-transparent border-[#DF0303] border p-5 pb-8 text-center flex flex-col justify-center cursor-pointer"
+                whileHover={{ scale: 1.1, backgroundColor: "#010c3aa3" }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                {item.icon && (
+                  <Image
+                    className="mx-auto"
+                    src={item.icon}
+                    width={30}
+                    height={30}
+                    alt=""
+                  />
+                )}
+                <div className="mt-4">
+                  {markdownify(item.name, "h2", "h5 Crimson")}
+                  <p className="mt-3 text-white">{item.content}</p>
+                </div>
+              </motion.div>
               </FadeInWhenVisibleY>
             ))}
           </div>
@@ -275,7 +180,7 @@ const Home = ({ frontmatter }) => {
 
       {/* App links */}
 
-      <section className="section AppLinksContainerBg overflow-hidden ">
+      <section className="section AppLinksContainerBg overflow-hidden bg-[#010c3a] ">
         <div className="container">
           <div className="items-center gap-8 md:grid md:grid-cols-2">
             <div className="md:order-1">
@@ -285,7 +190,6 @@ const Home = ({ frontmatter }) => {
                   <Image src={"/images/tabAndCellphone.png"} width={190} height={140} alt="tablet and cellphone" className="absolute bottom-0" />
                   <Image src={"/images/decoder.png"} width={150} height={120} alt="tablet and cellphone" className="absolute bottom-0 right-[10%]" />
                 </div>
-                {/* <CoronaVirus /> */}
               </FadeInWhenVisibleX>
 
             </div>
@@ -300,23 +204,23 @@ const Home = ({ frontmatter }) => {
                 <h2 className="font-bold text-white leading-[40px]">{applinks[0].title}</h2>
               </FadeInWhenVisibleY>
               <FadeInWhenVisibleY delay={0.6}>
-                <p className="mt-4 mb-2 text-xl">{applinks[0].content}</p>
+              <p className="mt-4 mb-2 text-xl">{applinks[0].content}</p>
               </FadeInWhenVisibleY>
               {/* {applinks.button.enable && ( */}
               <FadeInWhenVisibleY delay={0.6}>
-                <Link
-                  href={applinks[0].button.link}
-                  className="btn btn-primary mt-4 flex w-fit"
-                >
-                  <Image
-                    className="mr-1.5"
-                    src="/images/play.svg"
-                    width={18}
-                    height={14}
-                    alt="play button"
-                  />
-                  {applinks[0].button.label}
-                </Link>
+              <Link
+                href={applinks[0].button.link}
+                className="btn btn-primary mt-4 flex w-fit"
+              >
+                <Image
+                  className="mr-1.5"
+                  src="/images/play.svg"
+                  width={18}
+                  height={14}
+                  alt="play button"
+                />
+                {applinks[0].button.label}
+              </Link>
               </FadeInWhenVisibleY>
               {/* )} */}
             </div>
@@ -328,7 +232,7 @@ const Home = ({ frontmatter }) => {
       </section>
 
       {/* Channel List */}
-      <section className="section pb-0 pt-0 bg-[#1f1f1f]">
+      <section className="section pb-0 pt-0 bg-[#1f1f1f] overflow-hidden ">
         <div className="container">
           <div className={"service-carousel"}>
             <Swiper
@@ -347,7 +251,7 @@ const Home = ({ frontmatter }) => {
               {channelsList?.images.map((slide, index) => (
                 <SwiperSlide key={index}>
                   <motion.div className="cursor-pointer" whileHover={{ scale: 1.3 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}> 
                     <Image src={slide} alt="" width={150} height={150} />
                   </motion.div>
                 </SwiperSlide>
@@ -363,7 +267,7 @@ const Home = ({ frontmatter }) => {
         return (
           <section
             key={`service-${index}`}
-            className={`section pt-0 ${isOdd && "bg-theme-light"} overflow-hidden `}
+            className={`section pt-0 ${isOdd && "bg-theme-light"}`}
           >
             <div className="container">
               <div className="items-center gap-1 md:grid md:grid-cols-2">
@@ -383,13 +287,13 @@ const Home = ({ frontmatter }) => {
                     }`}
                 >
                   <div className="mb-4">
-                    <WidthWhenVisible delay={0.6} Svgwidth="91" />
+                    <WidthWhenVisible delay={0.6} Svgwidth="91"/>
                   </div>
                   <FadeInWhenVisibleY delay={0.4}>
                     <h2 className="font-bold leading-[40px] text-4xl mb-4">{service?.title}</h2>
                   </FadeInWhenVisibleY>
                   <FadeInWhenVisibleY delay={0.5}>
-                    {markdownify(service?.content, 'p', 'mt-4 mb-2 text-2xl')}
+                  {markdownify(service?.content, 'p', 'mt-4 mb-2 text-2xl')}
                   </FadeInWhenVisibleY>
                   <div className="flex my-6 iconsContainer">
                     {service.icons.map((icon, index) => (
@@ -401,14 +305,14 @@ const Home = ({ frontmatter }) => {
                     ))}
                   </div>
                   <div className="mt-5 w-[90%]">
-                    <FadeInWhenVisibleY delay={0.6}>
-                      <form className='flex'>
+                  <FadeInWhenVisibleY delay={0.6}>
+                    <form className='flex'>
 
-                        <input className='bg-gray-200 shadow-[inset 0 2px 4px 0 rgb(1 12 58 / 0.05)] rounded-lg p-2 flex-1 w-[50%] focus:ring-[#df0303] focus:border-[#df0303]' id='email' type='email' aria-label='email address' placeholder='email address' value={input} onChange={e => setInput(e.target.value)} />
-                        <button className='btn btn-primary flex flex-row justify-center content-center text-white shadow p-2 px-6 mx-2 border-4' type='submit'>
-                          Join Now <BiChevronRight />
-                        </button>
-                      </form>
+                      <input className='bg-gray-200 shadow-[inset 0 2px 4px 0 rgb(1 12 58 / 0.05)] rounded-lg p-2 flex-1 w-[50%] focus:ring-[#df0303] focus:border-[#df0303]' id='email' type='email' aria-label='email address' placeholder='email address' value={input} onChange={e => setInput(e.target.value)} />
+                      <button className='btn btn-primary flex flex-row justify-center content-center text-white shadow p-2 px-6 mx-2 border-4' type='submit'>
+                        Join Now <BiChevronRight />
+                      </button>
+                    </form>
                     </FadeInWhenVisibleY>
                   </div>
                   {/* {service.button.enable && (
