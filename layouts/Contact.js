@@ -24,7 +24,7 @@ const Contact = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="section bg-theme-light pt-1 px-8">
+      <section className="section bg-theme-light pt-1 px-0 md:px-8">
         <div className="form-container container">
           <div className="w-layout-grid block form-grid">
             <div className="form-left-div">
