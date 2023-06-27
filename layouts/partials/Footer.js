@@ -15,8 +15,8 @@ const Footer = () => {
   return (
     <footer className="section darkBlue pb-0">
       <div className="relative">
-          <Image src="/images/footer_pattern.png" className="absolute right-0" width={300} height={250} alt="" />
-          <Image src="/images/footer_pattern2.png" className="absolute top-[25vw]" width={300} height={250} alt="" />
+          <Image src="/images/footer_pattern.png" className="absolute right-0 hidden md:block" width={300} height={250} alt="" />
+          <Image src="/images/footer_pattern2.png" className="absolute top-[25vw] hidden md:block" width={300} height={250} alt="" />
       </div>
       <div className="container">
         {/* footer menu */}
