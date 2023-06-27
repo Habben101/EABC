@@ -18,7 +18,7 @@
   "nav_button": {
     "enable": true,
     "label": "Login",
-    "link": "/contact"
+    "link": "/login"
   },
   "nav_button_live": {
     "enabled":true,
