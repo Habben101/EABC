@@ -327,7 +327,7 @@ const Home = ({ frontmatter }) => {
 
       </section>
 
-      {/* Channel List */}
+      {/* Channel List
       <section className="section pb-0 pt-0 bg-[#1f1f1f]">
         <div className="container">
           <div className={"service-carousel"}>
@@ -344,7 +344,7 @@ const Home = ({ frontmatter }) => {
               init={channelsList?.images > 1 ? false : true}
             >
               {/* Slides */}
-              {channelsList?.images.map((slide, index) => (
+              {/* {channelsList?.images.map((slide, index) => (
                 <SwiperSlide key={index}>
                   <motion.div className="cursor-pointer" whileHover={{ scale: 1.3 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}> 
@@ -355,7 +355,7 @@ const Home = ({ frontmatter }) => {
             </Swiper>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* download links */}
       {downloadLinks.map((service, index) => {
