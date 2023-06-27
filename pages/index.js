@@ -267,94 +267,98 @@ const Home = ({ frontmatter }) => {
       </section>
 
       {/* faq */}
-      {/* <section className="section faqSectionBg">
+      <section className="section faqSectionBg">
         <div className="container">
           <Content faqs={faqs} />
         </div>
-      </section> */}
+      </section>
 
       {/* App links */}
 
-      
+      <section className="section AppLinksContainerBg overflow-hidden ">
+        <div className="container">
+          <div className="items-center gap-8 md:grid md:grid-cols-2">
+            <div className="md:order-1">
+              {/* {applink?.map((slide, index) => ( */}
+              <FadeInWhenVisibleX delay={0.4}>
+                <div className="relative manWatchingTVcontainer">
+                  <Image src={"/images/tabAndCellphone.png"} width={190} height={140} alt="tablet and cellphone" className="absolute bottom-0" />
+                  <Image src={"/images/decoder.png"} width={150} height={120} alt="tablet and cellphone" className="absolute bottom-0 right-[10%]" />
+                </div>
+                {/* <CoronaVirus /> */}
+              </FadeInWhenVisibleX>
+
+            </div>
+            {/* Content */}
+            <div
+              className={"service-content mt-5 md:mt-0 md:order-2"}
+            >
+              <div className="mb-4">
+                <WidthWhenVisible delay={0.6} Svgwidth="91" />
+              </div>
+              <FadeInWhenVisibleY delay={0.4}>
+                <h2 className="font-bold text-white leading-[40px]">{applinks[0].title}</h2>
+              </FadeInWhenVisibleY>
+              <FadeInWhenVisibleY delay={0.6}>
+                <p className="mt-4 mb-2 text-xl">{applinks[0].content}</p>
+              </FadeInWhenVisibleY>
+              {/* {applinks.button.enable && ( */}
+              <FadeInWhenVisibleY delay={0.6}>
+                <Link
+                  href={applinks[0].button.link}
+                  className="btn btn-primary mt-4 flex w-fit"
+                >
+                  <Image
+                    className="mr-1.5"
+                    src="/images/play.svg"
+                    width={18}
+                    height={14}
+                    alt="play button"
+                  />
+                  {applinks[0].button.label}
+                </Link>
+              </FadeInWhenVisibleY>
+              {/* )} */}
+            </div>
+          </div>
+
+
+        </div>
+
+      </section>
 
       {/* Channel List */}
-     
+      <section className="section pb-0 pt-0 bg-[#1f1f1f]">
+        <div className="container">
+          <div className={"service-carousel"}>
+            <Swiper
+              navigation={true}
+              modules={[Autoplay, Navigation]}
+              slidesPerView={5}
+              spaceBetween={20}
+
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              init={channelsList?.images > 1 ? false : true}
+            >
+              {/* Slides */}
+              {channelsList?.images.map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <motion.div className="cursor-pointer" whileHover={{ scale: 1.3 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+                    <Image src={slide} alt="" width={150} height={150} />
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </section>
 
       {/* download links */}
-      {downloadLinks.map((service, index) => {
-        const isOdd = index % 2 > 0;
-        return (
-          <section
-            key={`service-${index}`}
-            className={`section pt-0 ${isOdd && "bg-theme-light"}`}
-          >
-            <div className="container">
-              <div className="items-center gap-1 md:grid md:grid-cols-2">
-                {/* Carousel */}
-                <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
-                  {/* Slides */}
-                  {service?.images.map((slide, index) => (
-                    <FadeInWhenVisibleX key={index} delay={0.4}>
-                      <Image src={slide} alt="" width={600} height={200} />
-                    </FadeInWhenVisibleX>
-                  ))}
-                </div>
-
-                {/* Content */}
-                <div
-                  className={`service-content mt-5 w-full md:mt-0 ${!isOdd && "md:order-1"
-                    }`}
-                >
-                  <div className="mb-4">
-                    <WidthWhenVisible delay={0.6} Svgwidth="91" />
-                  </div>
-                  <FadeInWhenVisibleY delay={0.4}>
-                    <h2 className="font-bold leading-[40px] text-4xl mb-4">{service?.title}</h2>
-                  </FadeInWhenVisibleY>
-                  <FadeInWhenVisibleY delay={0.5}>
-                    {markdownify(service?.content, 'p', 'mt-4 mb-2 text-2xl')}
-                  </FadeInWhenVisibleY>
-                  <div className="flex my-6 iconsContainer">
-                    {service.icons.map((icon, index) => (
-                      <FadeInWhenVisibleY delay={0.6} key={index}>
-                        <Link href="#">
-                          <Image src={icon} width={150} height={10} alt="Download Icon" />
-                        </Link>
-                      </FadeInWhenVisibleY>
-                    ))}
-                  </div>
-                  <div className="mt-5 w-[90%]">
-                    <FadeInWhenVisibleY delay={0.6}>
-                      <form className='flex'>
-
-                        <input className='bg-gray-200 shadow-[inset 0 2px 4px 0 rgb(1 12 58 / 0.05)] rounded-lg p-2 flex-1 w-[50%] focus:ring-[#df0303] focus:border-[#df0303]' id='email' type='email' aria-label='email address' placeholder='email address' value={input} onChange={e => setInput(e.target.value)} />
-                        <button className='btn btn-primary flex flex-row justify-center content-center text-white shadow p-2 px-6 mx-2 border-4' type='submit'>
-                          Join Now <BiChevronRight />
-                        </button>
-                      </form>
-                    </FadeInWhenVisibleY>
-                  </div>
-                  {/* {service.button.enable && (
-                    <Link
-                      href={service?.button.link}
-                      className="btn btn-primary mt-4 flex w-fit"
-                    >
-                      <Image
-                        className="mr-1.5"
-                        src="/images/play.svg"
-                        width={18}
-                        height={14}
-                        alt="play button"
-                      />
-                      {service?.button.label}
-                    </Link>
-                  )} */}
-                </div>
-              </div>
-            </div>
-          </section>
-        );
-      })}
+      
 
       {/* Cta */}
       {/* <Cta cta={call_to_action} />*/}
