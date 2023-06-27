@@ -18,6 +18,100 @@ import { motion } from 'framer-motion';
 import FadeInWhenVisible,{ FadeInWhenVisibleX, FadeInWhenVisibleY, WidthWhenVisible } from "./../layouts/components/Animations/animations";
 
 
+// function FadeInWhenVisible({ children, delay }) {
+//   return (
+//     <motion.div
+//       initial={"hidden"}
+//       whileInView="visible"
+//       viewport={{ once: true }}
+//       transition={{ duration: 0.9, delay: delay }}
+//       variants={{
+//         visible: { opacity: 1 },
+//         hidden: { opacity: 0 }
+//       }}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// }
+
+// function FadeInWhenVisibleX({ children, delay }) {
+//   return (
+//     <motion.div
+//       initial={"hidden"}
+//       whileInView="visible"
+//       viewport={{ once: true }}
+//       transition={{ duration: 0.9, delay: delay }}
+//       variants={{
+//         visible: { opacity: 1, x: 0 },
+//         hidden: { opacity: 0, x: 100 }
+//       }}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// }
+
+// function FadeInWhenVisibleY({ children, delay }) {
+//   return (
+//     <motion.div
+//       initial={"hidden"}
+//       whileInView="visible"
+//       viewport={{ once: true }}
+//       transition={{ duration: 0.9, delay: delay }}
+//       variants={{
+//         visible: { opacity: 1, y: 0 },
+//         hidden: { opacity: 0, y: 100 }
+//       }}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// }
+
+// function WidthWhenVisible({ children, delay }) {
+//   return (
+//     <motion.svg
+//       initial={"hidden"}
+//       whileInView="visible"
+//       viewport={{ once: true }}
+//       transition={{ duration: 0.9, delay: delay }}
+//       variants={{
+//         visible: { width: 100 },
+//         hidden: { width: 0 }
+//       }}
+//       width="91"
+//       height="11"
+//       viewBox="0 0 91 11"
+//       fill="none"
+//       xmlns="http://www.w3.org/2000/svg"
+//     >
+//       <rect
+//         width="88"
+//         height="5"
+//         transform="translate(1.66998 3.85999)"
+//         fill="#DF0303"
+//       />
+//       <rect
+//         x="0.669983"
+//         y="0.859985"
+//         width="10"
+//         height="10"
+//         rx="5"
+//         fill="#DF0303"
+//       />
+//       <rect
+//         x="80.67"
+//         y="0.859985"
+//         width="10"
+//         height="10"
+//         rx="5"
+//         fill="#DF0303"
+//       />
+
+//     </motion.svg>
+//   );
+// }
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, faqs, applinks, channelsList, downloadLinks, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
@@ -191,6 +285,7 @@ const Home = ({ frontmatter }) => {
                   <Image src={"/images/tabAndCellphone.png"} width={190} height={140} alt="tablet and cellphone" className="absolute bottom-0" />
                   <Image src={"/images/decoder.png"} width={150} height={120} alt="tablet and cellphone" className="absolute bottom-0 right-[10%]" />
                 </div>
+                {/* <CoronaVirus /> */}
               </FadeInWhenVisibleX>
 
             </div>
@@ -233,14 +328,14 @@ const Home = ({ frontmatter }) => {
       </section>
 
       {/* Channel List */}
-      <section className="section pb-0">
+      <section className="section pb-0 pt-0 bg-[#1f1f1f]">
         <div className="container">
           <div className={"service-carousel"}>
             <Swiper
               navigation={true}
               modules={[Autoplay, Navigation]}
-              slidesPerView={4}
-              spaceBetween={25}
+              slidesPerView={5}
+              spaceBetween={20}
 
               autoplay={{
                 delay: 5000,
@@ -253,7 +348,7 @@ const Home = ({ frontmatter }) => {
                 <SwiperSlide key={index}>
                   <motion.div className="cursor-pointer" whileHover={{ scale: 1.3 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}> 
-                    <Image src={slide} alt="" width={200} height={200} />
+                    <Image src={slide} alt="" width={150} height={150} />
                   </motion.div>
                 </SwiperSlide>
               ))}
@@ -261,25 +356,6 @@ const Home = ({ frontmatter }) => {
           </div>
         </div>
       </section>
-
-
-      {/* workflow */}
-      {/* <section className="section pb-0">
-        <div className="mb-8 text-center">
-          {markdownify(
-            workflow.title,
-            "h2",
-            "mx-auto max-w-[400px] font-bold leading-[44px]"
-          )}
-          {markdownify(workflow.description, "p", "mt-3")}
-        </div>
-        <Image
-          src={workflow.image}
-          alt="workflow image"
-          width={1920}
-          height={296}
-        />
-      </section> */}
 
       {/* download links */}
       {downloadLinks.map((service, index) => {
