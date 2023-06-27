@@ -23,17 +23,12 @@ export default function Hero() {
     },
   });
 
-  const fadeAnimation = {
-    hidden : { opacity: 0, y: -20 },
-    visible : { opacity: 1, y: 0, transition: { ease: 'easeOut', duration: 1 } }
-  };
-
   return (
     <div
       ref={observe}
       className="w-full h-screen flex justify-center items-center overflow-hidden relative sectionHero"
       style={{
-        background: `linear-gradient(180deg, rgba(0, 0, 0, 0.47) 0%, rgb(2 20 63 / 83%) 90.62%), url("/images/${heroImage}")`,
+        background: `linear-gradient(180deg, rgba(0, 0, 0, 0.47) 0%, rgb(2 20 63 / 83%) 90.62%), url("/images/hero-1920.jpg")`,
       }}
     >
       <div className="flex flex-col justify-center items-center px-3">
