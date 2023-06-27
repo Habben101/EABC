@@ -275,7 +275,7 @@ const Home = ({ frontmatter }) => {
 
       {/* App links */}
 
-      <section className="section AppLinksContainerBg">
+      <section className="section AppLinksContainerBg overflow-hidden ">
         <div className="container">
           <div className="items-center gap-8 md:grid md:grid-cols-2">
             <div className="md:order-1">
