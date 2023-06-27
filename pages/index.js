@@ -275,87 +275,10 @@ const Home = ({ frontmatter }) => {
 
       {/* App links */}
 
-      <section className="section AppLinksContainerBg overflow-hidden ">
-        <div className="container">
-          <div className="items-center gap-8 md:grid md:grid-cols-2">
-            <div className="md:order-1">
-              {/* {applink?.map((slide, index) => ( */}
-              <FadeInWhenVisibleX delay={0.4}>
-                <div className="relative manWatchingTVcontainer">
-                  <Image src={"/images/tabAndCellphone.png"} width={190} height={140} alt="tablet and cellphone" className="absolute bottom-0" />
-                  <Image src={"/images/decoder.png"} width={150} height={120} alt="tablet and cellphone" className="absolute bottom-0 right-[10%]" />
-                </div>
-                {/* <CoronaVirus /> */}
-              </FadeInWhenVisibleX>
-
-            </div>
-            {/* Content */}
-            <div
-              className={"service-content mt-5 md:mt-0 md:order-2"}
-            >
-              <div className="mb-4">
-                <WidthWhenVisible delay={0.6} Svgwidth="91" />
-              </div>
-              <FadeInWhenVisibleY delay={0.4}>
-                <h2 className="font-bold text-white leading-[40px]">{applinks[0].title}</h2>
-              </FadeInWhenVisibleY>
-              <FadeInWhenVisibleY delay={0.6}>
-                <p className="mt-4 mb-2 text-xl">{applinks[0].content}</p>
-              </FadeInWhenVisibleY>
-              {/* {applinks.button.enable && ( */}
-              <FadeInWhenVisibleY delay={0.6}>
-                <Link
-                  href={applinks[0].button.link}
-                  className="btn btn-primary mt-4 flex w-fit"
-                >
-                  <Image
-                    className="mr-1.5"
-                    src="/images/play.svg"
-                    width={18}
-                    height={14}
-                    alt="play button"
-                  />
-                  {applinks[0].button.label}
-                </Link>
-              </FadeInWhenVisibleY>
-              {/* )} */}
-            </div>
-          </div>
-
-
-        </div>
-
-      </section>
+      
 
       {/* Channel List */}
-      <section className="section pb-0 pt-0 bg-[#1f1f1f]">
-        <div className="container">
-          <div className={"service-carousel"}>
-            <Swiper
-              navigation={true}
-              modules={[Autoplay, Navigation]}
-              slidesPerView={5}
-              spaceBetween={20}
-
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-              }}
-              init={channelsList?.images > 1 ? false : true}
-            >
-              {/* Slides */}
-              {channelsList?.images.map((slide, index) => (
-                <SwiperSlide key={index}>
-                  <motion.div className="cursor-pointer" whileHover={{ scale: 1.3 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                    <Image src={slide} alt="" width={150} height={150} />
-                  </motion.div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
-      </section>
+     
 
       {/* download links */}
       {downloadLinks.map((service, index) => {
