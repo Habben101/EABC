@@ -26,7 +26,7 @@ const Contact = ({ data }) => {
       </section>
       <section className="section bg-theme-light pt-1 px-8">
         <div className="form-container container">
-          <div className="w-layout-grid form-grid">
+          <div className="w-layout-grid block form-grid">
             <div className="form-left-div">
               <div>
                 <h2 className="h2-small text-white">Contact Information</h2>

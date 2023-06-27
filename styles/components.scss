@@ -327,9 +327,11 @@
   grid-template: ".Area"/.5fr 1fr;
 }
 
-.w-layout-grid {
-  grid-auto-columns: 1fr;
-  display: grid;
+@media (min-width: 768px) {
+  .w-layout-grid {
+    grid-auto-columns: 1fr;
+    display: grid!important;
+  }
 }
 
 .form-left-div {
