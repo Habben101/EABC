@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="flex flex-row justify-center mb-16">
             <Image src="/images/logo_whitee.png" width={250} height={250} alt="EABC Logo" />
           </div>
-          <div className="flex justify-evenly w-full">
+          <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 relative w-full">
             {footer.map((col) => {
               return (
                 <div className="mb-12 sm:col-6 lg:col-3 text-white" key={col.name}>
