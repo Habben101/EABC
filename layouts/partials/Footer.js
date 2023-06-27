@@ -22,7 +22,7 @@ const Footer = () => {
         {/* footer menu */}
         <div className="flex flex-col items-center">
           <div className="flex flex-row justify-center mb-16">
-            <Image src="/images/logo_whitee.png" width={250} height={250} alt="EABC Logo" />
+            <Image src="/images/logo_whitee.png" width={250} height={250} className=" w-28 md:w-[250px] " alt="EABC Logo" />
           </div>
           <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 relative w-full">
             {footer.map((col) => {
