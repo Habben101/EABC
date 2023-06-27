@@ -267,15 +267,65 @@ const Home = ({ frontmatter }) => {
       </section>
 
       {/* faq */}
-      <section className="section faqSectionBg">
+      {/* <section className="section faqSectionBg">
         <div className="container">
           <Content faqs={faqs} />
         </div>
-      </section>
+      </section> */}
 
       {/* App links */}
 
-      
+      <section className="section AppLinksContainerBg overflow-hidden ">
+        <div className="container">
+          <div className="items-center gap-8 md:grid md:grid-cols-2">
+            <div className="md:order-1">
+              {/* {applink?.map((slide, index) => ( */}
+              <FadeInWhenVisibleX delay={0.4}>
+                <div className="relative manWatchingTVcontainer">
+                  <Image src={"/images/tabAndCellphone.png"} width={190} height={140} alt="tablet and cellphone" className="absolute bottom-0" />
+                  <Image src={"/images/decoder.png"} width={150} height={120} alt="tablet and cellphone" className="absolute bottom-0 right-[10%]" />
+                </div>
+                {/* <CoronaVirus /> */}
+              </FadeInWhenVisibleX>
+
+            </div>
+            {/* Content */}
+            <div
+              className={"service-content mt-5 md:mt-0 md:order-2"}
+            >
+              <div className="mb-4">
+                <WidthWhenVisible delay={0.6} Svgwidth="91" />
+              </div>
+              <FadeInWhenVisibleY delay={0.4}>
+                <h2 className="font-bold text-white leading-[40px]">{applinks[0].title}</h2>
+              </FadeInWhenVisibleY>
+              <FadeInWhenVisibleY delay={0.6}>
+                <p className="mt-4 mb-2 text-xl">{applinks[0].content}</p>
+              </FadeInWhenVisibleY>
+              {/* {applinks.button.enable && ( */}
+              <FadeInWhenVisibleY delay={0.6}>
+                <Link
+                  href={applinks[0].button.link}
+                  className="btn btn-primary mt-4 flex w-fit"
+                >
+                  <Image
+                    className="mr-1.5"
+                    src="/images/play.svg"
+                    width={18}
+                    height={14}
+                    alt="play button"
+                  />
+                  {applinks[0].button.label}
+                </Link>
+              </FadeInWhenVisibleY>
+              {/* )} */}
+            </div>
+          </div>
+
+
+        </div>
+
+      </section>
 
       {/* Channel List */}
       <section className="section pb-0 pt-0 bg-[#1f1f1f]">
