@@ -1,6 +1,6 @@
 // section style
 .section {
-  @apply pt-[70px] pb-[70px];
+  @apply pt-[70px] pb-[70px] overflow-hidden;
 }
 
 .sectionHero {
