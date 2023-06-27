@@ -129,7 +129,7 @@ const Home = ({ frontmatter }) => {
         return (
           <section
             key={`service-${index}`}
-            className={`section ${isOdd && 'bg-theme-light'}`}
+            className={`section ${isOdd && 'bg-theme-light'} overflow-hidden `}
           >
             <div className="container">
               <div className="items-center gap-8 md:grid md:grid-cols-2">
@@ -358,7 +358,80 @@ const Home = ({ frontmatter }) => {
       </section>
 
       {/* download links */}
-      
+      {downloadLinks.map((service, index) => {
+        const isOdd = index % 2 > 0;
+        return (
+          <section
+            key={`service-${index}`}
+            className={`section pt-0 ${isOdd && "bg-theme-light"} overflow-hidden `}
+          >
+            <div className="container">
+              <div className="items-center gap-1 md:grid md:grid-cols-2">
+                {/* Carousel */}
+                <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
+                  {/* Slides */}
+                  {service?.images.map((slide, index) => (
+                    <FadeInWhenVisibleX key={index} delay={0.4}>
+                      <Image src={slide} alt="" width={600} height={200} />
+                    </FadeInWhenVisibleX>
+                  ))}
+                </div>
+
+                {/* Content */}
+                <div
+                  className={`service-content mt-5 w-full md:mt-0 ${!isOdd && "md:order-1"
+                    }`}
+                >
+                  <div className="mb-4">
+                    <WidthWhenVisible delay={0.6} Svgwidth="91" />
+                  </div>
+                  <FadeInWhenVisibleY delay={0.4}>
+                    <h2 className="font-bold leading-[40px] text-4xl mb-4">{service?.title}</h2>
+                  </FadeInWhenVisibleY>
+                  <FadeInWhenVisibleY delay={0.5}>
+                    {markdownify(service?.content, 'p', 'mt-4 mb-2 text-2xl')}
+                  </FadeInWhenVisibleY>
+                  <div className="flex my-6 iconsContainer">
+                    {service.icons.map((icon, index) => (
+                      <FadeInWhenVisibleY delay={0.6} key={index}>
+                        <Link href="#">
+                          <Image src={icon} width={150} height={10} alt="Download Icon" />
+                        </Link>
+                      </FadeInWhenVisibleY>
+                    ))}
+                  </div>
+                  <div className="mt-5 w-[90%]">
+                    <FadeInWhenVisibleY delay={0.6}>
+                      <form className='flex'>
+
+                        <input className='bg-gray-200 shadow-[inset 0 2px 4px 0 rgb(1 12 58 / 0.05)] rounded-lg p-2 flex-1 w-[50%] focus:ring-[#df0303] focus:border-[#df0303]' id='email' type='email' aria-label='email address' placeholder='email address' value={input} onChange={e => setInput(e.target.value)} />
+                        <button className='btn btn-primary flex flex-row justify-center content-center text-white shadow p-2 px-6 mx-2 border-4' type='submit'>
+                          Join Now <BiChevronRight />
+                        </button>
+                      </form>
+                    </FadeInWhenVisibleY>
+                  </div>
+                  {/* {service.button.enable && (
+                    <Link
+                      href={service?.button.link}
+                      className="btn btn-primary mt-4 flex w-fit"
+                    >
+                      <Image
+                        className="mr-1.5"
+                        src="/images/play.svg"
+                        width={18}
+                        height={14}
+                        alt="play button"
+                      />
+                      {service?.button.label}
+                    </Link>
+                  )} */}
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })}
 
       {/* Cta */}
       {/* <Cta cta={call_to_action} />*/}
